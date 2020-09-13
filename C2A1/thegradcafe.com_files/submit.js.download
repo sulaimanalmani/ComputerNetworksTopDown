@@ -1,0 +1,57 @@
+var RecaptchaOptions = {
+	theme : 'clean',
+	tabindex : 2
+};
+
+function quickcheck() {
+
+
+	if (data.institution.value == "" || (data.institution.value.length < 2)) {
+		alert('You need to enter a school!');
+		data.institution.focus();
+		return false;
+	}
+
+	if (data.programme.value == "" || (data.programme.value.length < 2)) {
+		alert('You need to enter a program');
+		data.programme.focus();
+		return false;
+	}
+
+
+	if (data.decision.value == "" || (data.decision.value.length < 4)) {
+		alert('What was the decision!?');
+		data.decision.focus();
+		return false;
+	}
+
+	if (data.how.value == "" || (data.how.value.length < 4)) {
+		alert('Tell us how you were notified');
+		data.how.focus();
+		return false;
+	}
+	if (data.season.value == "" || (data.season.value.length < 2)) {
+		alert('Which admit season are you applying to?');
+		data.season.focus();
+		return false;
+	}
+
+
+	if (data.level.value == "" || (data.level.value.length < 2)) {
+		alert('Tell us the degree level!');
+		data.institution.focus();
+		return false;
+
+	}
+
+	if (data.whendate.value == "" || (data.whendate.value.length < 9)) {
+		alert('You need to valid a date in mm/dd/yyyy format!');
+		data.whendate.focus();
+		return false;
+	}
+
+	if(grecaptcha.getResponse() == ''){
+		alert('You can\'t proceed. Please fill up the captcha.');
+		return false;
+	}
+}
